@@ -41,7 +41,19 @@ class BinarySearchTree {
     return newNode;
   }
 
-  lookup(value) {}
+  lookup(value) {
+    if (this.root) {
+      let currentNode = this.root;
+
+      while (currentNode) {
+        if (value == currentNode.value) return currentNode;
+        else if (value > currentNode.value) currentNode = currentNode.right;
+        else if (value < currentNode.value) currentNode = currentNode.left;
+      }
+    }
+
+    return undefined;
+  }
 }
 
 const bts = new BinarySearchTree();
